@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { View, FlatList } from "react-native"
 
 import { CATEGORIES } from "@/utils/data/products"
@@ -6,11 +7,10 @@ import { Header } from "@/components/header"
 import { CategoryButton } from "@/components/category-button";
 
 export default function Home() {
-  let category = "Lanche do dia"
+  const [category, setCategory] = useState(CATEGORIES[0])
 
   function handleCategorySelect(selectedCadegory: string) {
-    console.log(selectedCadegory)
-    category = selectedCadegory
+    setCategory(selectedCadegory)
   }
 
   return(
