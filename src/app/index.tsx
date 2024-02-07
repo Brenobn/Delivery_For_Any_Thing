@@ -1,4 +1,7 @@
-import { View } from "react-native"
+import { View, FlatList } from "react-native"
+
+import { CATEGORIES } from "@/utils/data/products"
+
 import { Header } from "@/components/header"
 
 export default function Home() {
