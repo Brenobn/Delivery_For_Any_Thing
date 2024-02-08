@@ -23,6 +23,12 @@ export default function Cart(){
           Seu carrinho está vazio
         </Text>
       )}
+
+      <View className="flex-row gap-2 items-center mt-5 mb-4">
+        <Text className="text-white text-xl font-subtitle">Total:</Text>
+
+        <Text className="text-lime-400 text-2xl font-heading">00,00</Text>
+      </View>
     </View>
   )
 }
