@@ -1,4 +1,5 @@
 import { View, Text, ScrollView } from "react-native"
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 import { useCartStore } from "@/stores/cart-store"
 
@@ -16,27 +17,32 @@ export default function Cart(){
   return(
     <View className="flex-1 pt-8">
       <Header title="Seu carrinho" />
-    <ScrollView>
-      {cartStore.products.length > 0 ? (
-        <View className="p-5 flex-1">
-          {cartStore.products.map((product) => (
-              <Product key={product.id} data={product} />
-            ))}
-        </View>
-      ) : (
-        <Text className="font-body text-slate-400 text-center my-8">
-          Seu carrinho está vazio
-        </Text>
-      )}
+      <KeyboardAwareScrollView>
 
-      <View className="flex-row gap-2 items-center mt-5 mb-4">
-        <Text className="text-white text-xl font-subtitle">Total:</Text>
+        <ScrollView>
+          <View className="p-5 flex-1">
+            {cartStore.products.length > 0 ? (
+              <View className="border-b border-slate-700">
+                {cartStore.products.map((product) => (
+                    <Product key={product.id} data={product} />
+                  ))}
+              </View>
+            ) : (
+              <Text className="font-body text-slate-400 text-center my-8">
+                Seu carrinho está vazio
+              </Text>
+            )}
 
-        <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
-      </View>
+            <View className="flex-row gap-2 items-center mt-5 mb-4">
+              <Text className="text-white text-xl font-subtitle">Total:</Text>
 
-      <Input placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" />
-    </ScrollView>
+              <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
+            </View>
+
+            <Input placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" />
+          </View>
+        </ScrollView>
+      </KeyboardAwareScrollView>
     </View>
   )
 }
