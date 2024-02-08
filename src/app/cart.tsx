@@ -30,6 +30,12 @@ export default function Cart(){
       }
     ])
   }
+
+  function handleOrder(){
+    if(address.trim().length === 0) {
+      return Alert.alert("Pedido", "Informe os dados da entrega.")
+    }
+  }
    
   return(
     <View className="flex-1 pt-8">
@@ -56,13 +62,16 @@ export default function Cart(){
               <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
             </View>
 
-            <Input placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" />
+            <Input 
+              placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" 
+              onChangeText={setAddress}
+            />
           </View>
         </ScrollView>
       </KeyboardAwareScrollView>
 
       <View className="p-5 gap-5">
-        <Button>
+        <Button onPress={handleOrder}>
           <Button.Text>Eviar pedido</Button.Text>
           <Button.Icon>
             <Feather name="arrow-right-circle" size={20} />
