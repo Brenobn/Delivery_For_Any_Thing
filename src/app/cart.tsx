@@ -10,6 +10,7 @@ import { Header } from "@/components/header"
 import { Product } from "@/components/product"
 import { Input } from "@/components/input"
 import { Button } from "@/components/button"
+import { LinkButton } from "@/components/link-button"
 
 export default function Cart(){
   const cartStore = useCartStore()
@@ -53,6 +54,8 @@ export default function Cart(){
             <Feather name="arrow-right-circle" size={20} />
           </Button.Icon>
         </Button>
+
+        <LinkButton title="Voltar ao cardápio" href="/" />
       </View>
     </View>
   )
