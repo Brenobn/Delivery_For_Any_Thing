@@ -39,7 +39,11 @@ export default function Home() {
         renderItem={({ item }) => (
           <Text>{item.title}</Text>
         )}
+        renderSectionHeader={({section: {title}}) => (
+          <Text>{title}</Text>
+        )}
       />
+
     </View>
   );
 }
