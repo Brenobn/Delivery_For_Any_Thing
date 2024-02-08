@@ -37,10 +37,12 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         stickySectionHeadersEnabled={false}
         renderItem={({ item }) => (
-          <Text>{item.title}</Text>
+          <Text className="text-white">{item.title}</Text>
         )}
         renderSectionHeader={({section: {title}}) => (
-          <Text>{title}</Text>
+          <Text className="text-xl text-white font-heading mt-8 mb-3">
+            {title}
+          </Text>
         )}
       />
 
