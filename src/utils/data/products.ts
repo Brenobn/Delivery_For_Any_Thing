@@ -4,7 +4,7 @@ const MENU = [
     data: [
       {
         id: "1",
-        title: "X-React",
+        title: "Double prime burger",
         price: 24.9,
         description:
           "Um hamburger tão bonito que me deu fome enquanto eu fazia esse layout para o projeto...",
@@ -28,7 +28,7 @@ const MENU = [
     data: [
       {
         id: "2",
-        title: "X-JavaScript",
+        title: "New York's burger",
         price: 34.9,
         description:
           "Os ingredientes desse hambúrguer mudam toda semana, então você sempre terá uma surpresa...",
@@ -47,7 +47,7 @@ const MENU = [
       },
       {
         id: "3",
-        title: "X-Cobol",
+        title: "From London",
         price: 32.7,
         description:
           "Aquele hambúrguer que não podemos tirar do cardápio devido aos clientes mais antigos da hamburgueria...",
@@ -66,7 +66,7 @@ const MENU = [
       },
       {
         id: "4",
-        title: "X-Tailwind",
+        title: "Diner Drill",
         price: 29.9,
         description:
           "Aquele que você não gosta de primeira, mas depois fica viciado e não consegue mais largar...",
