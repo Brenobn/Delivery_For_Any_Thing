@@ -84,6 +84,9 @@ export default function Cart(){
             <Input 
               placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" 
               onChangeText={setAddress}
+              blurOnSubmit={true}
+              onSubmitEditing={handleOrder}
+              returnKeyType="next"
             />
           </View>
         </ScrollView>
