@@ -6,6 +6,7 @@ import { formatCurrency } from "@/utils/functions/format-currency"
 
 import { Header } from "@/components/header"
 import { Product } from "@/components/product"
+import { Input } from "@/components/input"
 
 export default function Cart(){
   const cartStore = useCartStore()
@@ -33,6 +34,8 @@ export default function Cart(){
 
         <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
       </View>
+
+      <Input placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento" />
     </ScrollView>
     </View>
   )
