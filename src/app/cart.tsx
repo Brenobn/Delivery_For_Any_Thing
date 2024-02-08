@@ -35,6 +35,8 @@ export default function Cart(){
     if(address.trim().length === 0) {
       return Alert.alert("Pedido", "Informe os dados da entrega.")
     }
+
+    const products = cartStore.products.map((product) => `\n ${product.quantity} ${product.title}`).join("")
   }
    
   return(
