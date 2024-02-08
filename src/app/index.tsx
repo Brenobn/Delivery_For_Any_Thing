@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { View, FlatList, SectionList, Text } from "react-native"
 
 import { CATEGORIES, MENU } from "@/utils/data/products"
