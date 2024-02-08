@@ -11,17 +11,18 @@ export default function Cart(){
   return(
     <View className="flex-1 pt-8">
       <Header title="Seu carrinho" />
-      
-      <View className="p-5 flex-1">
-        {cartStore.products.map((product) => (
-            <Product key={product.id} data={product} />
-          ))
-        }
-      </View>
 
-      <Text className="font-body text-slate-400 text-center my-8">
-        Seu carrinho está vazio
-      </Text>
+      {cartStore.products.length > 0 ? (
+        <View className="p-5 flex-1">
+          {cartStore.products.map((product) => (
+              <Product key={product.id} data={product} />
+            ))}
+        </View>
+      ) : (
+        <Text className="font-body text-slate-400 text-center my-8">
+          Seu carrinho está vazio
+        </Text>
+      )}
     </View>
   )
 }
