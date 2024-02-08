@@ -10,8 +10,20 @@ import { CategoryButton } from "@/components/category-button";
 export default function Home() {
   const [category, setCategory] = useState(CATEGORIES[0])
 
+  const sectionListRef = useRef<SectionList>(null)
+
   function handleCategorySelect(selectedCadegory: string) {
     setCategory(selectedCadegory)
+
+    const sectionIndex = CATEGORIES.findIndex((category) => category === selectedCadegory)
+
+    if(sectionListRef.current) {
+      sectionListRef.current.scrollToLocation({
+        animated: true,
+        sectionIndex,
+        itemIndex: 0,
+      })
+    } 
   }
 
   return(
@@ -34,6 +46,7 @@ export default function Home() {
       />
 
       <SectionList 
+        ref={sectionListRef}
         sections={MENU}
         keyExtractor={(item) => item.id}
         stickySectionHeadersEnabled={false}
