@@ -4,6 +4,7 @@ import { View, FlatList, SectionList, Text } from "react-native"
 import { CATEGORIES, MENU } from "@/utils/data/products"
 
 import { Header } from "@/components/header"
+import { Product } from "@/components/product"
 import { CategoryButton } from "@/components/category-button";
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         stickySectionHeadersEnabled={false}
         renderItem={({ item }) => (
-          <Text className="text-white">{item.title}</Text>
+          <Product data={item}/>
         )}
         renderSectionHeader={({section: {title}}) => (
           <Text className="text-xl text-white font-heading mt-8 mb-3">
