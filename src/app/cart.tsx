@@ -1,4 +1,5 @@
 import { View, Text, ScrollView } from "react-native"
+import { Feather } from "@expo/vector-icons"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 import { useCartStore } from "@/stores/cart-store"
@@ -48,6 +49,9 @@ export default function Cart(){
       <View className="p-5 gap-5">
         <Button>
           <Button.Text>Eviar pedido</Button.Text>
+          <Button.Icon>
+            <Feather name="arrow-right-circle" size={20} />
+          </Button.Icon>
         </Button>
       </View>
     </View>
