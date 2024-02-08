@@ -2,11 +2,15 @@ import { View, Text } from "react-native"
 
 import { useCartStore } from "@/stores/cart-store"
 
+import { formatCurrency } from "@/utils/functions/format-currency"
+
 import { Header } from "@/components/header"
 import { Product } from "@/components/product"
 
 export default function Cart(){
   const cartStore = useCartStore()
+
+  const total = formatCurrency(cartStore.products.reduce((total, product) => total + product.price * product.quantity, 0))
    
   return(
     <View className="flex-1 pt-8">
