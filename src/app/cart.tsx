@@ -1,4 +1,4 @@
-import { View, Text } from "react-native"
+import { View, Text, ScrollView } from "react-native"
 
 import { useCartStore } from "@/stores/cart-store"
 
@@ -15,7 +15,7 @@ export default function Cart(){
   return(
     <View className="flex-1 pt-8">
       <Header title="Seu carrinho" />
-
+    <ScrollView>
       {cartStore.products.length > 0 ? (
         <View className="p-5 flex-1">
           {cartStore.products.map((product) => (
@@ -33,6 +33,7 @@ export default function Cart(){
 
         <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
       </View>
+    </ScrollView>
     </View>
   )
 }
