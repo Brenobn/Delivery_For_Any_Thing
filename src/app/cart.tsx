@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useNavigation } from "expo-router"
+
 import { View, Text, ScrollView, Alert } from "react-native"
 import { Feather } from "@expo/vector-icons"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
@@ -16,6 +18,7 @@ import { LinkButton } from "@/components/link-button"
 export default function Cart(){
   const [address, setAddress] = useState("")
   const cartStore = useCartStore()
+  const navigation = useNavigation()
 
   const total = formatCurrency(cartStore.products.reduce((total, product) => total + product.price * product.quantity, 0))
 
@@ -48,6 +51,9 @@ export default function Cart(){
 
     \n Valor total: ${total}
     `
+
+    cartStore.clear()
+    navigation.goBack()
   }
    
   return(
