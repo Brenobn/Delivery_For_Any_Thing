@@ -8,6 +8,7 @@ import { formatCurrency } from "@/utils/functions/format-currency"
 import { Header } from "@/components/header"
 import { Product } from "@/components/product"
 import { Input } from "@/components/input"
+import { Button } from "@/components/button"
 
 export default function Cart(){
   const cartStore = useCartStore()
@@ -43,6 +44,12 @@ export default function Cart(){
           </View>
         </ScrollView>
       </KeyboardAwareScrollView>
+
+      <View className="p-5 gap-5">
+        <Button>
+          <Button.Text>Eviar pedido</Button.Text>
+        </Button>
+      </View>
     </View>
   )
 }
