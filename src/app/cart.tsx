@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigation } from "expo-router"
 
-import { View, Text, ScrollView, Alert } from "react-native"
+import { View, Text, ScrollView, Alert, Linking } from "react-native"
 import { Feather } from "@expo/vector-icons"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
@@ -14,6 +14,8 @@ import { Product } from "@/components/product"
 import { Input } from "@/components/input"
 import { Button } from "@/components/button"
 import { LinkButton } from "@/components/link-button"
+
+const PHONE_NUMBER = "5521980479073"
 
 export default function Cart(){
   const [address, setAddress] = useState("")
@@ -44,13 +46,14 @@ export default function Cart(){
       .join("")
 
     const message = `
-    NOVO PEDIDO
+    🍔 NOVO PEDIDO
     \n Entregar em: ${address}
 
     ${products}
 
     \n Valor total: ${total}
     `
+    Linking.openURL(`http://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${message}`)
 
     cartStore.clear()
     navigation.goBack()
